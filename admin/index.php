@@ -46,31 +46,33 @@
 
 	<div class="container">
     <!-- Page Content -->
-    <?php
-  		include "home.php";
-    ?>   
-    <!-- /Page Content -->
-    <div class="jumbotron">
         <?php
-            $cmd = "select kategori_jenis from kategori";
-            $ecmd = mysqli_query($link, $cmd);
-            echo "<center>";
-            echo "<table border=0>";
-            echo "<tr>";
-            echo "<tr>";
-            $nom=0;
-            while ($data_kategori=mysqli_fetch_array($ecmd)) {
-                echo "<td width=18%><a href='cari.php?txt_cari=$data_kategori[kategori_jenis]'> $data_kategori[kategori_jenis] </a></td>";
-                $nom++;
-                if ($nom%2==0) {
-                    echo "</tr>";
-                    echo "<tr>";
-                }
+      		include "home.php";
+        ?>   
+        <!-- /Page Content -->
+        <div class="jumbotron">
+            <?php
+                $cmd = "select kategori_jenis from kategori";
+                $ecmd = mysqli_query($link, $cmd);
+                echo "<center>";
+                echo "<table border=0>";
+                echo "<tr>";
+                echo "<tr>";
+                $nom=0;
+                while ($data_kategori=mysqli_fetch_array($ecmd)) {
+                    echo "<td width=18%><a href='cari.php?txt_cari=$data_kategori[kategori_jenis]'> $data_kategori[kategori_jenis] </a></td>";
+                    $nom++;
+                    if ($nom%2==0) {
+                        echo "</tr>";
+                        echo "<tr>";
+                    }
 
-            }
-            echo "</table>";
-            echo "</center>";
-        ?>
+                }
+                echo "</table>";
+                echo "</center>";
+            ?>
+        </div>
+    </div>
         
 	<!-- Page Footer -->
 	<?php

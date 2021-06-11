@@ -60,7 +60,7 @@
                   //mysqli_free_result($result);
                 }
                 date_default_timezone_set('Asia/Jakarta');
-                $tanggal = date("Y-m-d");
+                $tanggal = date("Y-m-d-H:i:s");
                 //echo $tanggal;
                 // echo "$admin_buku_id";
               ?>

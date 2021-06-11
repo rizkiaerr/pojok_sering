@@ -1,9 +1,12 @@
 <?php
 	include 'header.php';
 	//include 'koneksi.php';
-
+	if (isset($_GET['foto'])){
+		$foto=$_GET['foto'];
+	}
+	
 	$nama=$_GET['nama'];
-	$foto=$_GET['foto'];
+	
 	$kategori=$_GET['kategori'];
 	$judul=$_GET['judul'];
 	$judul=urldecode($judul);

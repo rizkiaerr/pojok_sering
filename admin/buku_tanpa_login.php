@@ -4,14 +4,8 @@
   include 'header.php';
 ?>
 
-<?php
-  if (!empty($_SESSION['admin_email']))
-  {
-?>
-
 <div class="container">
   <h2>Daftar Upload Buku Admin</h2>
-  <p align="right"><a href="upload.php" class="btn btn-success">Tambah</a></p>
 
   <form action="cari.php?" method="POST">
   <input type="text" name="txt_cari" placeholder="cari berdasarkan ..... "></input>
@@ -27,7 +21,7 @@
       <th>Kategori</th>
       <th>Bahasa</th>
       <th>Tgl Upload</th>
-      <th></th>
+      <th>Aksi</th>
     </thead>
 <?php 
   //menampilkan data mysqli
@@ -44,9 +38,8 @@
       <td><?php echo  $r['kategori_jenis']; ?></td>
       <td><?php echo  $r['buku_bahasa']; ?></td>
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
-      <td>
-        <a href="#" title="Edit" class='open_buku_admin btn btn-sm btn-default' id='<?php echo  $r['buku_id']; ?>' ><span class="glyphicon glyphicon-edit"></span></a>
-        <a href="#" class="btn btn-sm btn-default" onclick="confirm_buku_admin('proses_delete.php?&buku_admin=<?php echo  $r['buku_id']; ?>');"><span class="glyphicon glyphicon-trash"></span></a>
+      <td align="center">
+        <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[admin_nama]" ?>"><span class="glyphicon glyphicon-edit"></span></a>
       </td>
   </tr>
 <?php } ?>
@@ -71,7 +64,7 @@
       <th>Author</th>
       <th>Kategori</th>
       <th>Tgl Upload</th>
-      <th></th>
+      <th>Aksi</th>
     </thead>
 <?php 
   //menampilkan data mysqli
@@ -86,9 +79,8 @@
       <td><?php echo  $r['member_nama']; ?></td>
       <td><?php echo  $r['kategori_jenis']; ?></td>
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
-      <td>
-        <a href="#" title="Edit" class='open_buku_member btn btn-sm btn-default' id='<?php echo  $r['buku_id']; ?>' ><span class="glyphicon glyphicon-edit"></span></a>
-        <a href="#" class="btn btn-sm btn-default" onclick="confirm_buku_member('proses_delete.php?&buku_member=<?php echo  $r['buku_id']; ?>');"><span class="glyphicon glyphicon-trash"></span></a>
+      <td align="center">
+            <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[member_nama]" ?>"><span class="glyphicon glyphicon-edit"></span></a>
       </td>
   </tr>
 <?php } ?>
@@ -173,9 +165,6 @@
     
 </script>
 
-<?php
-  };
-?>
 
 <?php
   include "footer.php";
