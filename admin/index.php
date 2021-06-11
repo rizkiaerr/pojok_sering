@@ -16,21 +16,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('../image/slider/s1.jpg');"></div>
+                <div class="fill" style="background-image:url('../image/slider/1.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Download Ebook Secara Gratis</h2>
+                    <h2>Selamat Datang di Pojok Sering</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('../image/slider/s2.jpg');"></div>
+                <div class="fill" style="background-image:url('../image/slider/S2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Upload Karyamu</h2>
+                    <h2>Kembangkan Kompetensi</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('../image/slider/s3.jpg');"></div>
+                <div class="fill" style="background-image:url('../image/slider/3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h2>Biarkan bersinar</h2>
+                    <h2>Bersama Kami</h2>
                 </div>
             </div>
         </div>

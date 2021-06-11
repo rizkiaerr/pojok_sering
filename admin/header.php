@@ -147,9 +147,10 @@ function HandleBrowseClick(input_image)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a href="index.php" class="navbar-brand">Pojok Sering</a>            
+                <img src="../image/slider/logo_pengayoman.png" height="50px" width="50px">
+                <img src="../image/slider/logo_lapas.png" height="50px" width="50px">
 			</div>
-
+            <a href="index.php" class="navbar-brand"> Pojok Sering </a>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">

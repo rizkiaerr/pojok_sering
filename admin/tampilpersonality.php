@@ -7,18 +7,17 @@
 ?>
 <!------ Include the above in your HEAD tag ---------->
 <?php
-if (isset($_GET['no_thread'])){ 
-$no_thread = $_GET['no_thread'];
+if (isset($_GET['no_personality'])){ 
+$no_personality = $_GET['no_personality'];
 $nama = $_GET['nama'];
 }
-$tampilan_header=mysqli_query($link,"SELECT thread.no_thread,thread.thread_subjek,thread.thread_pesan FROM thread WHERE thread.no_thread = '$no_thread' ");
+$tampilan_header=mysqli_query($link,"SELECT personality.no_personality,personality.personality_tema,personality.isi_personality FROM personality WHERE personality.no_personality = '$no_personality' ");
 $header=mysqli_fetch_array($tampilan_header);
-$query=mysqli_query($link,"SELECT * FROM (SELECT admin.admin_id AS thread_komen_id,admin.admin_nama AS nama, admin.admin_foto AS foto, admin.admin_email AS email FROM admin UNION SELECT member.member_id AS thread_komen_id,member.member_nama AS nama, member.member_foto AS foto, member.member_email AS email FROM member) hasil INNER JOIN thread_komen ON thread_komen.thread_komen_id=hasil.thread_komen_id AND thread_komen.no_thread ='$no_thread' ORDER BY thread_komen.thread_komen_tanggal;");
-$count=mysqli_query($link,"SELECT COUNT(*) FROM thread_komen;");
-$count_komen=mysqli_query($link,"SELECT COUNT(*) FROM thread_komen WHERE thread_komen.no_thread= '$no_thread';");
+$query=mysqli_query($link,"SELECT * FROM (SELECT admin.admin_id AS personality_komen_id,admin.admin_nama AS nama, admin.admin_foto AS foto,admin.admin_email AS email FROM admin UNION SELECT member.member_id AS personality_komen_id,member.member_nama AS nama, member.member_foto AS foto, member.member_email AS email FROM member) hasil INNER JOIN personality_komen ON personality_komen.personality_komen_id=hasil.personality_komen_id AND personality_komen.no_personality ='$no_personality' ORDER BY personality_komen.personality_komen_tanggal;");
+$count=mysqli_query($link,"SELECT COUNT(*) FROM personality_komen;");
+$count_komen=mysqli_query($link,"SELECT COUNT(*) FROM personality_komen WHERE personality_komen.no_personality= '$no_personality';");
 $hitungan=mysqli_fetch_array($count);
 $hitungan_komen=mysqli_fetch_array($count_komen);
-
 ?>
 <br><br><br>
 <div class="container">
@@ -28,16 +27,16 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
                 <h4>
                 <span class="glyphicon glyphicon-comment"></span>
                 <span class="label label-info">
-                    <?php echo $header['thread_subjek'];?></span>
+                    <?php echo $header['personality_tema'];?></span>
                     <span class="panel-title">
-                    <?php echo $nama?></span>
+                    <?php echo $nama; ?></span>
             </h4>
             </div>
             <div class="panel-body">
                 <ul class="list-group">
                     <li class="list-group-item">
                           <div class="comment-text">
-                              <?php echo $header['thread_pesan']; ?>
+                              <?php echo $header['isi_personality']; ?>
                          </div>
                     </li>
                 </ul>
@@ -70,26 +69,27 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
                             <div class="col-xs-10 col-md-11">
                                 <div>
                                     <div class="mic-info">
-                                        Oleh: <?php echo $result_komen['nama']; ?> (<?php echo $result_komen['thread_komen_tanggal'];?>)
+                                        Oleh: <?php echo $result_komen['nama']; ?> (<?php echo $result_komen['personality_komen_tanggal'];?>)
                                     </div>
                                 </div>
                                 <div class="comment-text">
-                                    <?php echo $result_komen['thread_komen_pesan'];?>
+                                    <?php echo $result_komen['personality_komen_pesan'];?>
                                 </div>
                                 <div class="action">
                                 <?php    if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $result_komen['email'])
-                                    { ?> 
-                                    <a href="edit_thread_komen.php?nomor=<?php echo $result_komen['no_thread_komen'];?>&no=<?php echo $result_komen['thread_komen_id'];?>" role="button">
-                                        <button type="button" class="btn btn-success btn-xs" title="Edit">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </button>
-                                    </a>
-                                    <a href="proses_delete_thread_komen.php?nomor=<?php echo $result_komen['no_thread_komen'];?>" role="button">
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                    </a>
-                                  <?php } ?>  
+                                        { ?> 
+                                            <a href="edit_personality_komen.php?nomor=<?php echo $result_komen['no_personality_komen'];?>&no=<?php echo $result_komen['personality_komen_id'];?>" role="button">
+                                                <button type="button" class="btn btn-success btn-xs" title="Edit">
+                                                    <span class="glyphicon glyphicon-pencil"></span>
+                                                </button>
+                                            </a>
+
+                                            <a href="proses_delete_personality_komen.php?nomor=<?php echo $result_komen['no_personality_komen'];?>" role="button">
+                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </button>
+                                            </a>
+                                        <?php }?>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
         </div>
 
     </div>
-<a href="tambah_thread_komen.php?value=<?php echo $hitungan[0]+1; ?>&no=<?php echo $header['no_thread']?>" class="btn btn-primary" role="button">+ Tambah Komentar</a>
+<a href="tambah_personality_komen.php?value=<?php echo $hitungan[0]+1; ?>&no=<?php echo $header['no_personality']?>" class="btn btn-primary" role="button">+ Tambah Komentar</a>
                 
 </div> 
 

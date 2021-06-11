@@ -15,6 +15,7 @@
 								$res = mysqli_query($link, $query);
 
 								$no=0;
+								$page=1;
 								while($data=mysqli_fetch_array($res))
 								{
 									$no++;
@@ -36,7 +37,8 @@
 												?>
 														<div class="col-sm-2"><a href="baca.php?kategori=<?php echo"$data[buku_kategori]" ?>&judul=<?php echo"$data[buku_judul]" ?>&nama=<?php echo"$data[admin_nama]" ?>&foto=<?php echo"$data[admin_foto]" ?> " class="thumbnail"><?php echo cl_image_tag("$data[buku_id].jpg", array("width" => 200, "height" => 250, "crop" => "fill", "page" => 1)); ?></a></div>
 														<?php
-															if($no % 4 == 0){
+															if($no % 3 == 0){
+														$page++;
 														?>
 
 														<?php
@@ -151,9 +153,9 @@
 	</div>
 	</div>
 	<center>
-	<br><br>
-	<h1><i> "Knowledge Only Powerful</h2>
-	<h1><i> When Shared"</h2>
-	<h3><i> Anonim</h2>
+		<br><br>
+		<h4><i> "Gantungkan cita-citamu setinggi langit, bermimpilah setinggi langit, jika engkau jatuh, engkau akan jatuh diantara bintang-bintang</i></h4>
+		<h3><i> Ir. Soekarno</i></h3>
+	</center>
 			
 </div>
