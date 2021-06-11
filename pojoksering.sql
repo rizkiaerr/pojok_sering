@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2021 at 08:27 PM
+-- Generation Time: Jun 11, 2021 at 11:00 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.19
 
@@ -69,7 +69,10 @@ CREATE TABLE `buku` (
 
 INSERT INTO `buku` (`buku_id`, `buku_judul`, `buku_author`, `buku_kategori`, `tanggal_upload`) VALUES
 (50, 'asd', 13, '09', '2021-06-04'),
-(51, '1 MODUL PENATAUSAHAAN PERLENGKAPAN KEAMANAN (1)', 13, '09', '2021-06-10');
+(51, '1 MODUL PENATAUSAHAAN PERLENGKAPAN KEAMANAN (1)', 13, '09', '2021-06-10'),
+(52, 'web fix', 14, '09', '2021-06-11'),
+(53, '20210212083518404', 14, '09', '2021-06-11'),
+(54, 'Desain Baju', 14, '09', '2021-06-11');
 
 -- --------------------------------------------------------
 
@@ -152,6 +155,48 @@ INSERT INTO `member` (`member_id`, `member_nama`, `member_jk`, `member_ttl`, `me
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `personality`
+--
+
+CREATE TABLE `personality` (
+  `no_personality` int(11) NOT NULL,
+  `personality_id` varchar(11) CHARACTER SET latin1 NOT NULL,
+  `personality_tema` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `isi_personality` varchar(3000) CHARACTER SET latin1 NOT NULL,
+  `tanggal_upload` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `personality`
+--
+
+INSERT INTO `personality` (`no_personality`, `personality_id`, `personality_tema`, `isi_personality`, `tanggal_upload`) VALUES
+(1, '13', 'Isu Aktual Kementerian Hukum dan HAM', 'Isinya sudah kuubah ya wohoooo', '2021-06-11 02:11:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personality_komen`
+--
+
+CREATE TABLE `personality_komen` (
+  `no_personality_komen` int(11) NOT NULL,
+  `no_personality` int(11) NOT NULL,
+  `personality_komen_id` int(11) NOT NULL,
+  `personality_komen_pesan` varchar(3000) CHARACTER SET latin1 NOT NULL,
+  `personality_komen_tanggal` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `personality_komen`
+--
+
+INSERT INTO `personality_komen` (`no_personality_komen`, `no_personality`, `personality_komen_id`, `personality_komen_pesan`, `personality_komen_tanggal`) VALUES
+(1, 1, 13, 'hihi', '2021-06-11 15:28:32');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thread`
 --
 
@@ -230,6 +275,19 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`member_id`);
 
 --
+-- Indexes for table `personality`
+--
+ALTER TABLE `personality`
+  ADD PRIMARY KEY (`no_personality`);
+
+--
+-- Indexes for table `personality_komen`
+--
+ALTER TABLE `personality_komen`
+  ADD PRIMARY KEY (`no_personality_komen`),
+  ADD KEY `fk_no_personality` (`no_personality`);
+
+--
 -- Indexes for table `thread`
 --
 ALTER TABLE `thread`
@@ -256,7 +314,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `buku_id` smallint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `buku_id` smallint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -281,6 +339,12 @@ ALTER TABLE `buku`
 ALTER TABLE `buku_admin`
   ADD CONSTRAINT `fk_author` FOREIGN KEY (`buku_author`) REFERENCES `admin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_kategori` FOREIGN KEY (`buku_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `personality_komen`
+--
+ALTER TABLE `personality_komen`
+  ADD CONSTRAINT `fk_no_personality` FOREIGN KEY (`no_personality`) REFERENCES `personality` (`no_personality`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `thread_komen`
