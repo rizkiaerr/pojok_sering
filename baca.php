@@ -10,7 +10,7 @@
 	$kategori=$_GET['kategori'];
 	$judul=$_GET['judul'];
 	$judul=urldecode($judul);
-	$alamat="../buku/".$kategori."/".$judul.".pdf";
+	$alamat="buku/".$kategori."/".$judul.".pdf";
 ?>
 
     <!-- Page Content -->

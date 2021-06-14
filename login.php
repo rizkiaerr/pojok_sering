@@ -29,6 +29,7 @@
                         <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-user"></span></span>
                         <input type="text" class="form-control" placeholder="Masukkan Email Anda" name="email" aria-describedby="sizing-addon2" required>
                     </div>
+                    
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-lock"></span></span>
                         <input type="password" class="form-control" placeholder="Masukkan Password Anda" name="password" aria-describedby="sizing-addon2" required>

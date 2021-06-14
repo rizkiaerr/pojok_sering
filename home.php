@@ -1,4 +1,12 @@
 <html>
+
+    <?php 
+
+    $query1="SELECT admin.admin_nama AS nama,admin.admin_foto AS foto, buku_admin.buku_id AS buku_id, buku_admin.buku_kategori, buku_admin.buku_judul FROM admin, buku_admin WHERE admin.admin_id=buku_admin.buku_author UNION (SELECT member.member_nama, member.member_foto, buku.buku_id, buku.buku_kategori, buku.buku_judul FROM member, buku WHERE member.member_id=buku.buku_author ORDER BY tanggal_upload);";
+    $read=mysqli_query($link,$query1);
+    $hasil=mysqli_fetch_array($read);
+
+    ?> 
 <div class="container">
     <div class="row">
 <div class="container-fluid">
@@ -154,8 +162,10 @@
     </div>
 </div>
 </div>
+
 <h1 align="right">
-<a class="btn btn-primary" href="buku_tanpa_login.php?kategori=<?php echo"$data[buku_kategori]" ?>&judul=<?php echo"$data[buku_judul]" ?>&nama=<?php echo"$data[member_nama]" ?>">Tampilkan Lebih Banyak</a>
+
+<a class="btn btn-primary" href="buku_tanpa_login.php?kategori=<?php echo"$hasil[buku_kategori]" ?>&judul=<?php echo"$hasil[buku_judul]" ?>&nama=<?php echo"$hasil[admin_nama]" ?>">Tampilkan Lebih Banyak</a>
 </h1>	
 	<center>
 		<br><br>

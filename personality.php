@@ -21,7 +21,7 @@
 <?php 
 //menampilkan data mysqli
   $no = 0;
-  $sql=mysqli_query($link,"SELECT admin.admin_id AS personality_id,admin.admin_nama AS nama, admin.admin_email, personality.no_personality,personality.isi_personality,personality.personality_tema,personality.tanggal_upload FROM admin JOIN personality WHERE admin.admin_id=personality.personality_id UNION SELECT member.member_id AS personality_id,member.member_nama AS nama, member.member_email, personality.no_personality,personality.isi_personality,personality.personality_tema,personality.tanggal_upload FROM member JOIN personality WHERE member.member_id=personality.personality_id");
+  $sql=mysqli_query($link,"SELECT admin.admin_id AS personality_id,admin.admin_nama AS nama, admin.admin_email AS email, personality.no_personality,personality.isi_personality,personality.personality_tema,personality.tanggal_upload FROM admin JOIN personality WHERE admin.admin_id=personality.personality_id UNION SELECT member.member_id AS personality_id,member.member_nama AS nama, member.member_email AS email, personality.no_personality,personality.isi_personality,personality.personality_tema,personality.tanggal_upload FROM member JOIN personality WHERE member.member_id=personality.personality_id");
   while($r=mysqli_fetch_array($sql)){
   $no++;
   $nomor_personality = $r['no_personality'];
@@ -35,7 +35,7 @@
       <td>
        <a href="tampilpersonality.php?no_personality=<?php echo $nomor_personality;?>&nama=<?php echo $r['nama'];?>" class="btn btn-sm btn-default" ><span class="glyphicon glyphicon-eye-open"></span></a>
         <?php
-        if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $r['admin_email'])
+        if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $r['email'] || (!empty($_SESSION['admin_email'])))
                 { ?>
         <a href="edit_personality.php?no_personality=<?php echo  $nomor_personality;?>&personality_id=<?php echo $r['personality_id']?>&personality_tema=<?php echo $r['personality_tema']?>&isi_personality=<?php echo $r['isi_personality']?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span></a>
         <a href="proses_delete_personality.php?no_personality=<?php echo  $r['no_personality'];?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-trash"></span></a>

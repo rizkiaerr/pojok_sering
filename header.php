@@ -5,9 +5,9 @@
     <?php 
         session_start(); 
       include 'config.php';
-      include '../Cloudinary/Cloudinary.php';
-      include '../Cloudinary/Uploader.php';
-      include '../Cloudinary/Api.php';
+      include 'Cloudinary/Cloudinary.php';
+      include 'Cloudinary/Uploader.php';
+      include 'Cloudinary/Api.php';
     ?>
 
         <meta charset="utf-8">
@@ -19,19 +19,19 @@
         <title>Pojok Sering</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="../css/bootstrap.css" rel="stylesheet">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/modern-business.css" rel="stylesheet">
-        <link href="../css/modal-login.css" rel="stylesheet">
-        <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="../datatables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" >
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/modern-business.css" rel="stylesheet">
+        <link href="css/modal-login.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="datatables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" >
         
         
         <!-- jQuery -->
-        <script src="../js/jquery.js"></script>
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../datatables/js/jquery.dataTables.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="datatables/js/jquery.dataTables.js"></script>
 
         <!-- Cloudinary -->
          <?php
@@ -145,8 +145,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="../image/slider/logo_pengayoman.png" height="50px" width="50px">
-                <img src="../image/slider/logo_lapas.png" height="50px" width="50px">
+                <img src="image/slider/logo_pengayoman.png" height="50px" width="50px">
+                <img src="image/slider/logo_lapas.png" height="50px" width="50px">
 			</div>
             <a href="index.php" class="navbar-brand"> Pojok Sering </a>
             <!-- Collect the nav links, forms, and other content for toggling -->

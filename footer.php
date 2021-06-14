@@ -14,9 +14,9 @@
                     </table>
                     <table border="0" align="center" width="500">
                      <tr>
-                        <td> <img src="../image/slider/logo_corpu.png" height="50px" width="50px"></td>
+                        <td> <img src="image/slider/logo_corpu.png" height="50px" width="50px"></td>
                         <td> <p align="center">Copyright &copy; <?php echo date("Y"); ?> Lapas Kelas II B Purwakarta</p></td>
-                        <td> <img src="../image/slider/logo_pusaka.png" height="50px" width="50px"></td>   
+                        <td> <img src="image/slider/logo_pusaka.png" height="50px" width="50px"></td>   
                      </tr>
                   </table>
 

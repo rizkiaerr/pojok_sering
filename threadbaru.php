@@ -21,7 +21,7 @@
 <?php 
 //menampilkan data mysqli
   $no = 0;
-  $sql=mysqli_query($link,"SELECT admin.admin_id AS thread_id,admin.admin_nama AS nama, admin.admin_email, thread.no_thread,thread.thread_pesan,thread.thread_subjek,thread.tanggal_upload FROM admin JOIN thread WHERE admin.admin_id=thread.thread_id UNION SELECT member.member_id AS thread_id,member.member_nama AS nama,member.member_email, thread.no_thread,thread.thread_pesan,thread.thread_subjek,thread.tanggal_upload FROM member JOIN thread WHERE member.member_id=thread.thread_id");
+  $sql=mysqli_query($link,"SELECT admin.admin_id AS thread_id,admin.admin_nama AS nama, admin.admin_email AS email, thread.no_thread,thread.thread_pesan,thread.thread_subjek,thread.tanggal_upload FROM admin JOIN thread WHERE admin.admin_id=thread.thread_id UNION SELECT member.member_id AS thread_id,member.member_nama AS nama,member.member_email AS email, thread.no_thread,thread.thread_pesan,thread.thread_subjek,thread.tanggal_upload FROM member JOIN thread WHERE member.member_id=thread.thread_id");
   while($r=mysqli_fetch_array($sql)){
   $no++;
   $nomor_thread = $r['no_thread'];
@@ -35,7 +35,7 @@
       <td>
         <a href="tampilthread.php?no_thread=<?php echo $nomor_thread;?>&nama=<?php echo $r['nama'];?>" class="btn btn-sm btn-default" onclick="confirm_buku_admin('proses_edit_thread.php?&buku_admin=<?php echo  $r['member_id']; ?>');"><span class="glyphicon glyphicon-eye-open"></span></a>
         <?php
-        if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $r['admin_email'])
+        if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $r['email'] || (!empty($_SESSION['admin_email'])))
                 { ?>
         <a href="edit_thread.php?thread_id=<?php echo  $nomor_thread;?>&id_thread=<?php echo $r['thread_id']?>&thread_subjek=<?php echo $r['thread_subjek']?>&thread_pesan=<?php echo $r['thread_pesan']?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span></a>
         <a href="proses_delete.php?thread_id=<?php echo  $r['no_thread'];?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-trash"></span></a>
