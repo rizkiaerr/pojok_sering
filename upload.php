@@ -40,7 +40,7 @@
     <h1 class="well">Upload Buku</h1>
   <div class="col-lg-12 well">
   <div class="row">
-    <form action="http://localhost/pojok_sering/upload_act.php" method="POST" enctype="multipart/form-data">
+    <form action="upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
               <?php
@@ -129,7 +129,7 @@
     <h1 class="well">Upload Buku</h1>
   <div class="col-lg-12 well">
   <div class="row">
-    <form action="http://localhost/pojok_sering/upload_act.php" method="POST" enctype="multipart/form-data">
+    <form action="upload_act.php" method="POST" enctype="multipart/form-data">
       <?php echo $out; ?>
       <div class="col-sm-12">
              <input type="hidden" name="buku_author" value="<?php echo "$member_id"?>"> 

@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('image/slider/S2.jpg');"></div>
+                <div class="fill" style="background-image:url('image/slider/2.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>Kembangkan Kompetensi</h2>
                 </div>

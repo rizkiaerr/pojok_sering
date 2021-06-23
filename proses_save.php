@@ -32,5 +32,6 @@ mysqli_query($link,"INSERT INTO member(member_id, member_nama, member_jk, member
 		     ('$member_id','$member_nama','$member_jk','$member_ttl','$member_tglahir','$member_alamat','$member_username','$member_tlp','$member_email','$member_password')");
 
 header('location:index.php');
+// echo "Berhasil ditambahkan";
 }
 ?>

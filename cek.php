@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-  $user = "root";
-  $password = "";
-  $database = "berbagiilmu";
+  $user = "u9016224_admin";
+  $password = "Pusak@41113";
+  $database = "u9016224_berbagiilmu";
 
 $con=mysqli_connect('localhost',$user,$password,$database);
 // Check connection

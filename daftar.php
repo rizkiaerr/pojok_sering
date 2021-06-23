@@ -1,7 +1,11 @@
 <?php include "header.php"; ?>
 <div class="container">
   <h1 class="well">Data Pendaftaran</h1>
-    <?php $data_last=mysqli_query($link,"SELECT member_id FROM member ORDER BY member_id DESC LIMIT 1"); ?>
+    <?php
+    $data_last=mysqli_query($link,"SELECT COUNT(member_id) FROM member"); 
+    $counter=mysqli_fetch_row($data_last);
+
+    ?>
   <div class="col-lg-12 well">
 
       <form action="proses_save.php" method="POST">
@@ -9,7 +13,7 @@
             <div class="form-group">
               <label>Nama Lengkap</label>
               <input type="text" name="member_nama" placeholder="Masukan Nama Lengkap anda.." class="form-control" required>
-              <input type="hidden" name="member_id" type="text" class="form-control" value="<?php echo $data_last+1; ?>"/>
+              <input type="hidden" name="member_id" type="text" class="form-control" value="<?php echo $counter[0]+1; ?>"/>
             </div>
             
             <div class="form-group">
@@ -65,4 +69,4 @@
   </div>
 </div>
 
-<? php include "footer.php";?>
+<?php include "footer.php";?>

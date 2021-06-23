@@ -36,9 +36,10 @@
         <!-- Cloudinary -->
          <?php
              \Cloudinary::config(array( 
-                 "cloud_name" => "dzupaysdl", 
-                 "api_key" => "782957816277577", 
-                 "api_secret" => "DpgQ8pMe2Q9upM6d0bYowtsvG4U" 
+ 
+                 "cloud_name" => "dgpexqgv8", 
+                 "api_key" => "582214635924994", 
+                 "api_secret" => "UIDLijnExXrd8Vedhwh4yuMS_o4"
              )); 
          ?>
          <!-- <link href="CLOUDINARY_URL=cloudinary://782957816277577:DpgQ8pMe2Q9upM6d0bYowtsvG4U@dzupaysdl" > -->
@@ -134,6 +135,7 @@
 </head>
 
 <body>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -145,8 +147,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="image/slider/logo_pengayoman.png" height="50px" width="50px">
-                <img src="image/slider/logo_lapas.png" height="50px" width="50px">
+                <img src="image/slider/logo_pengayoman.png" height="40px" width="40px">
+                <img src="image/slider/logo_lapas.png" height="40px" width="40px">
 			</div>
             <a href="index.php" class="navbar-brand"> Pojok Sering </a>
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,13 +1,13 @@
 <?php
-include "admin/config.php";
+include "config.php";
 include "Cloudinary/Cloudinary.php";
 include "Cloudinary/Uploader.php";
 include "Cloudinary/Api.php";
 
 \Cloudinary::config(array( 
-             "cloud_name" => "dzupaysdl", 
-             "api_key" => "782957816277577", 
-             "api_secret" => "DpgQ8pMe2Q9upM6d0bYowtsvG4U" 
+                 "cloud_name" => "dgpexqgv8", 
+                 "api_key" => "582214635924994", 
+                 "api_secret" => "UIDLijnExXrd8Vedhwh4yuMS_o4" 
          )); 
 
 if ($_POST['buku_kategori']=="09"){
@@ -41,7 +41,7 @@ if ($_POST['buku_kategori']=="09"){
 		$absolute_path = realpath("$alamatfile");
 		\Cloudinary\Uploader::upload($absolute_path, $c_buku);
  	}else{
-		header("Location: admin/upload.php?auth=e2eu8932dh73q3eh822e2qdq");
+		header("Location: upload.php?auth=e2eu8932dh73q3eh822e2qdq");
 	}
 
 }else{
@@ -78,9 +78,9 @@ if ($_POST['buku_kategori']=="09"){
 		$c_buku = array("public_id" => $buku_id);
 		$absolute_path = realpath("$alamatfile");
 		\Cloudinary\Uploader::upload($absolute_path, $c_buku);
- 		header("Location: admin/upload.php?auth=123131adajjadl131jakdl12");	
+ 		header("Location: upload.php?auth=123131adajjadl131jakdl12");	
 	}else{
-		header("Location: admin/upload.php?auth=e2eu8932dh73q3eh822e2qdq&'$alamatfile'");
+		header("Location: upload.php?auth=e2eu8932dh73q3eh822e2qdq&'$alamatfile'");
 	}
 
 	//\Cloudinary\Uploader::upload($_FILES["buku_file"]["tmp_name"]);

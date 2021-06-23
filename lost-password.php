@@ -34,6 +34,9 @@
                 </p>
                 </center>
               ';
+               if (!$mail->send()) {
+ echo "Email Error: " . $mail->ErrorInfo;
+ }
             break;
             case '123131adajjadl131jakdl12':
                 $out = '

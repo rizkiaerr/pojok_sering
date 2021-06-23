@@ -5,12 +5,14 @@ include 'phpmailer/default.php';
 ob_start();
   $email_cr = ($_POST['member_email']);
   $real_email = mysqli_real_escape_string($link, $email_cr);
-  $query  = "SELECT * FROM member WHERE BINARY member_email = '$real_email'";
+  $query  = "SELECT member_email FROM member WHERE member_email = '$real_email'";
   $login  = mysqli_query($link, $query);
   $ketemu = mysqli_num_rows($login);
+  
   if ($ketemu == 1){
     $cetak     = mysqli_fetch_array($login);
     extract($cetak);
+    // var_dump($cetak);
     //password baru
     $pass="129FAasdsk25kwBjakjDlff"; $panjang='8'; $len=strlen($pass);
 	$start=$len-$panjang; $xx=rand('0',$start);
@@ -62,7 +64,7 @@ ob_start();
 		<br>
 		<center>
 			<p> Atau klik di bawah ini untuk mendapatkan password baru sesuai keinginan Anda</p>
-			<b><i><a href=\"localhost/berbagiilmu/admin/password_baru.php?email=".$member_email."\">PASSWORD BARU!!!</a></i></b>
+			<b><i><a href=\"pojoksering.id/password_baru.php?email=".$member_email."\">PASSWORD BARU!!!</a></i></b>
 		</center>
 			<p><br><br>
 	    Developer Berbagi Ilmu<br>
@@ -84,7 +86,7 @@ ob_start();
   //send the message, check for errors
   if (!$mail->send()) {
       //  echo "Mailer Error: " . $mail->ErrorInfo;
-      header("location: lost-password.php?auth=dadawd2131e1313eqe13edqde");
+    //   header("location: lost-password.php?auth=dadawd2131e1313eqe13edqde");
   }else{
 		$password_ganti = $link->real_escape_string(md5($passwordbaru));
 		$query2 = mysqli_query($link, "UPDATE member SET member_password = '$password_ganti' WHERE member_email = '$email_cr'");

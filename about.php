@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">About Us</li>
                 </ol>
@@ -48,7 +48,7 @@
         <br><br>
         Oleh karena itu, kami berharap website <a href="www.pojoksering.com"> pojoksering.com </a> ini akan menjadi website andalan khususnya untuk Pegawai Lembaga Pemasyarakatan kelas IIB Purwakarta untuk mengembangkan kompetensinya.
         <br><br>
-        Kritik dan saran kami harapkan untuk mencapai kesempurnaan untuk pojoksering.com ini. Salam dari kami, mari kita diam di POJOK-an dan SElf leaRnING di <a href="www.pojoksering.com"> pojoksering.com </a> ^_^
+        Kritik dan saran kami harapkan untuk mencapai kesempurnaan untuk pojoksering.com ini. Salam dari kami, mari kita diam di POJOK-an dan SElf leaRnING di <a href="www.pojoksering.id"> pojoksering.id </a> ^_^
         
        </p>
     </div>
