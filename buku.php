@@ -46,7 +46,7 @@
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
       <td>
         <a href="#" title="Edit" class='open_buku_admin btn btn-sm btn-default' id='<?php echo  $r['buku_id']; ?>' ><span class="glyphicon glyphicon-edit"></span></a>
-        <a href="#" class="btn btn-sm btn-default" onclick="confirm_buku_admin('proses_delete.php?&buku_admin=<?php echo  $r['buku_id']; ?>');"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="proses_delete.php?buku_id_admin=<?php echo  $r['buku_id']; ?>&buku_judul=<?php echo  $r['buku_judul']; ?>&buku_kategori=<?php echo  $r['buku_kategori']; ?>"  class="btn btn-sm btn-default"><span class="glyphicon glyphicon-trash"></span></a>
       </td>
   </tr>
 <?php } ?>
@@ -88,7 +88,7 @@
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
       <td>
         <a href="#" title="Edit" class='open_buku_member btn btn-sm btn-default' id='<?php echo  $r['buku_id']; ?>' ><span class="glyphicon glyphicon-edit"></span></a>
-        <a href="#" class="btn btn-sm btn-default" onclick="confirm_buku_member('proses_delete.php?&buku_member=<?php echo  $r['buku_id']; ?>');"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="proses_delete.php?buku_id_member=<?php echo  $r['buku_id']; ?>&buku_judul=<?php echo  $r['buku_judul']; ?>&buku_kategori=<?php echo  $r['buku_kategori']; ?>"  class="btn btn-sm btn-default"><span class="glyphicon glyphicon-trash"></span></a>
       </td>
   </tr>
 <?php } ?>

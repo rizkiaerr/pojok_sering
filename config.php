@@ -1,12 +1,12 @@
 <?php
 	$host	= "localhost";
-	$user = "u9016224_admin";
-	$password = "Pusak@41113";
-	$database = "u9016224_berbagiilmu";
+	// $user = "u9016224_admin";
+	// $password = "Pusak@41113";
+	// $database = "u9016224_berbagiilmu";
 
-	// $user = "root";
-	// $password = "";
-	// $database = "berbagiilmu";
+	$user = "root";
+	$password = "";
+	$database = "berbagiilmu";
 	
 	$link = mysqli_connect($host,$user,$password,$database);
 
