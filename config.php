@@ -4,6 +4,10 @@
 	$password = "Pusak@41113";
 	$database = "u9016224_berbagiilmu";
 
+	// $user = "root";
+	// $password = "";
+	// $database = "berbagiilmu";
+	
 	$link = mysqli_connect($host,$user,$password,$database);
 
 
