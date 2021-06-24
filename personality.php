@@ -5,6 +5,9 @@
     include 'header.php';
 ?>
 <!------ Include the above in your HEAD tag ---------->
+    <script>
+        alert("Sebelum mengisi resume dalam Forum Personality pastikan Anda sudah melakukan studi literatur sesuai jadwal yang sudah ditetapkan!\n\n Jadwal Pengisian Resume \n\n Senin-Selasa : Manajemen\n Rabu-Kamis : Teknis Subtantif sesuai dengan Tugas dan Fungsi\n Jumat Sabtu Minggu : Isu Aktual Kementerian Hukum dan HAM")
+    </script>
     <div class="container">
     <h1 = class="well">
                     <table class="table table-striped table-bordered">
@@ -39,7 +42,6 @@
                 { ?>
         <a href="edit_personality.php?no_personality=<?php echo  $nomor_personality;?>&personality_id=<?php echo $r['personality_id']?>&personality_tema=<?php echo $r['personality_tema']?>&isi_personality=<?php echo $r['isi_personality']?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span></a>
         <a href="proses_delete_personality.php?no_personality=<?php echo  $r['no_personality'];?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-trash"></span></a>
-        <a href="tampilpersonality.php?no_personality=<?php echo $nomor_personality;?>&nama=<?php echo $r['nama'];?>" class="btn btn-sm btn-default" ><span class="glyphicon glyphicon-eye-open"></span></a>
     <?php }?>
       </td>
   </tr>

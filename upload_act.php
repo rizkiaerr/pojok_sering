@@ -27,7 +27,7 @@ if ($_POST['buku_kategori']=="09"){
 
  	if(move_uploaded_file($tmp, $alamatfile)){
 		mysqli_query($link,"INSERT INTO buku (buku_id,buku_judul,buku_author,buku_kategori,tanggal_upload) VALUES ('','$namafile',$buku_author,'$buku_kategori','$tanggal')");
- 		header("Location: admin/upload.php?auth=123131adajjadl131jakdl12");
+ 		header("Location: upload.php?auth=123131adajjadl131jakdl12");
                 //$data=mysqli_fetch_row($res);
  		$query="SELECT buku_id FROM buku ORDER BY buku_id DESC LIMIT 1";
         if ($res = mysqli_query($link, $query)){
