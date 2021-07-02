@@ -67,11 +67,11 @@ ob_start();
 			<b><i><a href=\"pojoksering.id/password_baru.php?email=".$member_email."\">PASSWORD BARU!!!</a></i></b>
 		</center>
 			<p><br><br>
-	    Developer Berbagi Ilmu<br>
+	    Developer Pojok Sering<br>
 			</p>
 			<center>
 			<small>
-			<p class=\"doff\">All Rights Reserved &copy; ".date("Y")." Berbagi Ilmu.<br>
+			<p class=\"doff\">All Rights Reserved &copy; ".date("Y")." Pojok Sering.<br>
 			</p>
 			</small>
 			</center>
