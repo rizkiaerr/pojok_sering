@@ -33,11 +33,11 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="datatables/js/jquery.dataTables.js"></script>
         
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
         <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
+ -->
         <!-- Cloudinary -->
          <?php
              \Cloudinary::config(array( 
@@ -221,11 +221,11 @@
                                                     <input type="hidden" name="member_email" class="form-control" value="<?php echo $member_email; ?>" />
                                                     <input onchange="document.getElementById('image-preview').src=window.URL.createObjectURL(this.files[0])" accept="image/jpeg,image/png" type="file" title="Click for change photo" name="member_foto" />
                                                     <?php
-                                                        echo "<img src='foto/member/".$member_foto."' id='image-preview' alt='your foto' class='img-responsive' >";
+                                                        echo "<img src='foto/".$member_foto."' id='image-fluid' alt='your foto' class='img-responsive' >";
                                                     ?>
                                                     </div>
                                                     <p class="text-center small">
-                                                        <input type="submit" value="Ganti Foto" class="btn btn-default btn-sm" size="20">
+                                                        <!-- <input type="submit" value="Ganti Foto" class="btn btn-default btn-sm" size="20"> -->
                                                     </p>
                                                 </form>                            
                                             </div>
@@ -299,7 +299,7 @@
                                                             <input type="hidden" name="admin_id" class="form-control" value="<?php echo $admin_id; ?>" />
                                                             <input type="hidden" name="admin_email" class="form-control" value="<?php echo $admin_email; ?>" />
                                                             <input onchange="document.getElementById('image-preview').src=window.URL.createObjectURL(this.files[0])" accept="image/jpeg,image/png" type="file" title="Click for change photo" name="admin_foto" />
-                                                            <?php echo "<img src='foto/admin/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' >"; ?>
+                                                            <?php echo "<img src='foto/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' >"; ?>
                                                         </div>
                                                         <p class="text-center small"></p>
                                                         <input type="submit" value="Change Photo" class="btn btn-default btn-sm" size="20">

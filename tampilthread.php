@@ -66,7 +66,7 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-xs-2 col-md-1">
-                                <img src="../default.png" class="img-circle img-responsive" alt="" /></div>
+                                <?php echo "<img class='img-circle img-responsive' src='foto/".$result_komen['foto']."' />"; ?></div>
                             <div class="col-xs-10 col-md-11">
                                 <div>
                                     <div class="mic-info">
