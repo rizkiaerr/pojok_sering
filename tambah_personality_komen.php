@@ -22,7 +22,6 @@
                 <label for="message">Komentar</label>
                   <textarea id="message" name="personality_komen_pesan" placeholder="Silahkan isi komentar disini.." class="form-control" required></textarea>
                   <input type="hidden" name="personality_komen_id" type="text" class="form-control" value="<?php echo $personality_komen_id;?>"/>
-                  <input type="hidden" name="no_personality_komen" type="text" class="form-control" value="<?php echo $no;?>"/>
                   <input type="hidden" name="personality_komen_datetime" type="text" class="form-control" value="<?php echo $tanggal;?>"/>
                   <input type="hidden" name="no_personality" type="text" class="form-control" value="<?php echo $no_personality;?>"/>                  
             </div>

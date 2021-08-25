@@ -16,7 +16,7 @@ if(mysqli_num_rows($admin)==1){
 
 elseif(mysqli_num_rows($member)==1){
 	$_SESSION['member_email']=$email;
-	header("location:index.php");
+	header("location:notifikasi.php");
 }
 
 else

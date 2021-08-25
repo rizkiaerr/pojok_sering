@@ -19,7 +19,7 @@
       <th>Penulis</th>
       <th>Author</th>
       <th>Kategori</th>
-      <th>Bahasa</th>
+      <th>Jenis</th>
       <th>Tgl Upload</th>
       <th>Aksi</th>
     </thead>
@@ -36,10 +36,10 @@
       <td><?php echo  $r['buku_penulis']; ?></td>
       <td><?php echo  $r['admin_nama']; ?></td>
       <td><?php echo  $r['kategori_jenis']; ?></td>
-      <td><?php echo  $r['buku_bahasa']; ?></td>
+      <td><?php echo  $r['buku_jenis']; ?></td>
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
-      <td align="center">
-        <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[admin_nama]" ?>"><span class="glyphicon glyphicon-edit"></span></a>
+      <td>
+        <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[admin_nama]" ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
       </td>
   </tr>
 <?php } ?>
@@ -59,29 +59,40 @@
 
 <table id="mytable" class="table table-bordered">
     <thead>
-      <th>no</th>
+      <th>No</th>
       <th>Judul</th>
-      <th>Author</th>
+      <th>Penulis</th>
+      <th>Uploader</th>
       <th>Kategori</th>
-      <th>Tgl Upload</th>
-      <th>Aksi</th>
+      <th>Jenis</th>
+      <th colspan=3>Aksi</th>
     </thead>
 <?php 
   //menampilkan data mysqli
   $no = 0;
-  $sql=mysqli_query($link,"SELECT buku.*,member.member_nama,kategori.kategori_jenis FROM buku,member,kategori WHERE buku.buku_author=member.member_id AND buku.buku_kategori=kategori.kategori_id");
+  $sql=mysqli_query($link,"SELECT buku.*,member.member_nama,member.member_email,kategori.kategori_jenis FROM buku,member,kategori WHERE buku.buku_author=member.member_id AND buku.buku_kategori=kategori.kategori_id");
   while($r=mysqli_fetch_array($sql)){
   $no++;       
 ?>
   <tr>
       <td><?php echo $no; ?></td>
       <td><?php echo  $r['buku_judul']; ?></td>
+      <td><?php echo  $r['buku_penulis']; ?></td>
       <td><?php echo  $r['member_nama']; ?></td>
       <td><?php echo  $r['kategori_jenis']; ?></td>
-      <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
-      <td align="center">
-            <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[member_nama]" ?>"><span class="glyphicon glyphicon-edit"></span></a>
+      <td><?php echo  $r['buku_jenis']; ?></td>
+      <td>
+        <a href="baca.php?kategori=<?php echo"$r[buku_kategori]" ?>&judul=<?php echo"$r[buku_judul]" ?>&nama=<?php echo"$r[member_nama]" ?>"><span class="glyphicon glyphicon-eye-open"></span></a>
       </td>
+      <?php 
+      if(!empty($_SESSION['member_email']) && ($_SESSION['member_email']) == $r['member_email']){?>
+      <td>
+        <a href="proses_delete_buku.php?buku_id=<?php echo  $r['buku_id']; ?>&buku_judul=<?php echo  $r['buku_judul']; ?>&buku_kategori=<?php echo  $r['buku_kategori']; ?>"><span class="glyphicon glyphicon-trash"></span></a>   
+      </td>
+      <td>
+        <a href="edit_buku.php?buku_id=<?php echo  $r['buku_id']; ?>&buku_judul=<?php echo  $r['buku_judul']; ?>&buku_penulis=<?php echo  $r['buku_penulis']; ?>&kategori=<?php echo  $r['kategori_jenis']?>"><span class="glyphicon glyphicon-pencil"></span></a>   
+      </td>
+      <?php }?>
   </tr>
 <?php } ?>
 </table>

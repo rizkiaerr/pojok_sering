@@ -60,11 +60,11 @@
 					while($data_buku=mysqli_fetch_array($res))
 					{
 				?>
-					<div class="col-sm-4">
+					<div class="col-sm-3">
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<p align="center">
-									<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>&foto=<?php echo"$data_buku[admin_foto]" ?>&nama=<?php echo"$data_buku[admin_nama]" ?>"><?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 140, "height" => 180, "crop" => "fill", "page" => 1)); ?></p></a>
+									<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>&foto=<?php echo"$data_buku[admin_foto]" ?>&nama=<?php echo"$data_buku[admin_nama]" ?>"><?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 100, "height" => 150, "crop" => "fill", "page" => 1)); ?></p></a>
 								</p>
 							</div>
 							<div class="panel-footer">
@@ -82,11 +82,11 @@
 					while($data_buku1=mysqli_fetch_array($res1))
 					{
 				?>
-					<div class="col-sm-4 ">
+					<div class="col-sm-3 ">
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<p align="center">
-									<a href="baca.php?judul=<?php echo"$data_buku1[buku_judul]" ?>&kategori=29&foto=<?php echo"$data_buku1[member_foto]" ?>&nama=<?php echo"$data_buku1[member_nama]" ?>"><?php echo cl_image_tag("$data_buku1[buku_id].jpg", array("width" => 140, "height" => 180, "crop" => "fill", "page" => 1)); ?></p></a>
+									<a href="baca.php?judul=<?php echo"$data_buku1[buku_judul]" ?>&kategori=29&foto=<?php echo"$data_buku1[member_foto]" ?>&nama=<?php echo"$data_buku1[member_nama]" ?>"><?php echo cl_image_tag("$data_buku1[buku_id].jpg", array("width" => 100, "height" => 150, "crop" => "fill", "page" => 1)); ?></p></a>
 								</p>
 							</div>
 							<div class="panel-footer">
@@ -105,11 +105,11 @@
 					while($data_buku=mysqli_fetch_array($res))
 					{
 				?>
-					<div class="col-sm-4 ">
+					<div class="col-sm-3 ">
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<p align="center">
-									<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>&foto=<?php echo"$data_buku[admin_foto]" ?>&nama=<?php echo"$data_buku[admin_nama]" ?>"> <?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 140, "height" => 180, "crop" => "fill", "page" => 1)); ?></p></a>
+									<a href="baca.php?kategori=<?php echo"$data_buku[buku_kategori]" ?>&judul=<?php echo"$data_buku[buku_judul]" ?>&foto=<?php echo"$data_buku[admin_foto]" ?>&nama=<?php echo"$data_buku[admin_nama]" ?>"> <?php echo cl_image_tag("$data_buku[buku_id].jpg", array("width" => 100, "height" => 150, "crop" => "fill", "page" => 1)); ?></p></a>
 								</p>
 							</div>
 							<div class="panel-footer">

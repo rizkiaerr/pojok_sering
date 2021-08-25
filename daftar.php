@@ -14,7 +14,7 @@
             <div class="form-group">
               <label>Nama Lengkap</label>
               <input type="text" name="member_nama" placeholder="Masukan Nama Lengkap anda.." class="form-control" required>
-              <input type="hidden" name="member_id" type="text" class="form-control" value="<?php echo $counter[0]+11; ?>"/>
+
             </div>
             
             <div class="form-group">

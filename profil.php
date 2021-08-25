@@ -161,7 +161,7 @@ if(!empty($_SESSION['admin_email']))
         <div class="panel-heading" style="background-color:black; border-color:black"></div>
         <div class="panel-body">
           <?php
-            echo "<img src='foto/admin/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' style='width:100%'>"; 
+            echo "<img src='foto/".$admin_foto."' id='image-preview' alt='your foto' class='img-responsive' style='width:100%'>"; 
           ?>        
         </div>
       </div>
@@ -247,7 +247,7 @@ $query=mysqli_query($link,"SELECT * FROM member where member_email='$member'");
         <div class="panel-heading" style="background-color:black; border-color:black"></div>
         <div class="panel-body">
           <?php
-            echo "<img src='foto/member/".$member_foto."' id='image-preview' alt='your foto' class='img-responsive' >";
+            echo "<img src='foto/".$member_foto."' id='image-preview' alt='your foto' class='img-responsive' >";
           ?>
         </div>
       </div>

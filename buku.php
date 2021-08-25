@@ -25,7 +25,7 @@
       <th>Penulis</th>
       <th>Author</th>
       <th>Kategori</th>
-      <th>Bahasa</th>
+      <th>Jenis</th>
       <th>Tgl Upload</th>
       <th></th>
     </thead>
@@ -42,7 +42,7 @@
       <td><?php echo  $r['buku_penulis']; ?></td>
       <td><?php echo  $r['admin_nama']; ?></td>
       <td><?php echo  $r['kategori_jenis']; ?></td>
-      <td><?php echo  $r['buku_bahasa']; ?></td>
+      <td><?php echo  $r['buku_jenis']; ?></td>
       <td><?php echo  date('d F Y',strtotime($r['tanggal_upload'])); ?></td>
       <td>
         <a href="#" title="Edit" class='open_buku_admin btn btn-sm btn-default' id='<?php echo  $r['buku_id']; ?>' ><span class="glyphicon glyphicon-edit"></span></a>

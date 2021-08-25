@@ -1,7 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="../datatables/css/zigzag.css" rel="stylesheet" type="text/css" >
 <?php 
   include 'header.php';
 ?>
@@ -65,7 +61,7 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
                     <li class="list-group-item">
                         <div class="row">
                             <div class="col-xs-2 col-md-1">
-                                <img src="../default.png" class="img-circle img-responsive" alt="" /></div>
+                             <?php echo "<img class='img-circle img-responsive' src='foto/".$result_komen['foto']."' />"; ?></div>
                             <div class="col-xs-10 col-md-11">
                                 <div>
                                     <div class="mic-info">
@@ -105,7 +101,12 @@ $hitungan_komen=mysqli_fetch_array($count_komen);
         </div>
 
     </div>
-<a href="tambah_personality_komen.php?value=<?php echo $hitungan[0]+1; ?>&no=<?php echo $header['no_personality']?>" class="btn btn-primary" role="button">+ Tambah Komentar</a>
+        <?php 
+    if (!empty($_SESSION['member_email']) || !empty($_SESSION['admin_email'])){?>
+            <a href="tambah_personality_komen.php?value=<?php echo $hitungan[0]+1; ?>&no=<?php echo $header['no_personality']?>" class="btn btn-primary" role="button">+ Tambah Komentar</a>
+        <?php 
+    }?>
+
                 
 </div> 
 

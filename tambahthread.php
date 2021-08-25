@@ -21,7 +21,6 @@
               <label>Subjek</label>
               <input type="text" name="thread_subjek" placeholder="Masukan subjek yang Anda bahas.." class="form-control" required>
               <input type="hidden" name="thread_id" type="text" class="form-control" value="<?php echo $thread_id;?>"/>
-              <input type="hidden" name="no_thread" type="text" class="form-control" value="<?php echo $no;?>"/>
               <input type="hidden" name="thread_datetime" type="text" class="form-control" value="<?php echo $tanggal;?>"/>
             </div>
             <div class="form-group">

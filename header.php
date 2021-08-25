@@ -366,7 +366,7 @@
                         <input type="password" class="form-control" placeholder="Password" name="member_password">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"/> Remember me
+                                <input type="checkbox"/> Remember me </label>
                             </label>
                         </div>
                     </div>

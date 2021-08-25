@@ -28,7 +28,6 @@
               <label>Tema</label>
               <input type="text" name="personality_tema" class="form-control" value="<?php echo"$judul_tema";?>"readonly>
               <input type="hidden" name="personality_id" type="text" class="form-control" value="<?php echo $personality_id;?>"/>
-              <input type="hidden" name="no_personality" type="text" class="form-control" value="<?php echo $no;?>"/>
               <input type="hidden" name="tanggal_upload" type="text" class="form-control" value="<?php echo $tanggal;?>"/>
             </div>
             <div class="form-group">

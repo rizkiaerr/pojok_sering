@@ -22,7 +22,6 @@
                 <label for="message">Komentar</label>
                   <textarea id="message" name="thread_komen_pesan" placeholder="Silahkan isi komentar disini.." class="form-control" required></textarea>
                   <input type="hidden" name="thread_komen_id" type="text" class="form-control" value="<?php echo $thread_komen_id;?>"/>
-                  <input type="hidden" name="no_thread_komen" type="text" class="form-control" value="<?php echo $no;?>"/>
                   <input type="hidden" name="thread_komen_datetime" type="text" class="form-control" value="<?php echo $tanggal;?>"/>
                   <input type="hidden" name="no_thread" type="text" class="form-control" value="<?php echo $no_thread;?>"/>                  
             </div>

@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <?php
-                                $query = "SELECT admin_nama, admin_foto, buku_id, buku_kategori, buku_judul FROM admin, buku_admin WHERE admin.admin_id=buku_admin.buku_author ORDER BY tanggal_upload";
+                                $query = "SELECT admin_nama, admin_foto, buku_id, buku_kategori, buku_judul FROM admin, buku_admin WHERE admin.admin_id=buku_admin.buku_author ORDER BY tanggal_upload DESC";
                                 $res = mysqli_query($link, $query);
                                 $no=0;
                                 while($data=mysqli_fetch_array($res))
@@ -99,7 +99,7 @@
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <?php
-                                $query = "SELECT member_nama, member_foto, buku_id, buku_kategori, buku_judul FROM member, buku WHERE member.member_id=buku.buku_author ORDER BY tanggal_upload";
+                                $query = "SELECT member_nama, member_foto, buku_id, buku_kategori, buku_judul FROM member, buku WHERE member.member_id=buku.buku_author ORDER BY tanggal_upload DESC";
                                 $res = mysqli_query($link, $query);
                                 $no=0;
                                 while($data=mysqli_fetch_array($res))
@@ -161,11 +161,9 @@
         <!--/well-->
     </div>
 </div>
+<a align="right" class="btn btn-primary" href="buku_tanpa_login.php?kategori=<?php echo"$hasil[buku_kategori]" ?>&judul=<?php echo"$hasil[buku_judul]" ?>&nama=<?php echo"$hasil[nama]" ?>">Tampilkan Lebih Banyak</a>
 </div>
 
-<h1 align="right">
-
-<a class="btn btn-primary" href="buku_tanpa_login.php?kategori=<?php echo"$hasil[buku_kategori]" ?>&judul=<?php echo"$hasil[buku_judul]" ?>&nama=<?php echo"$hasil[admin_nama]" ?>">Tampilkan Lebih Banyak</a>
 </h1>	
 	<center>
 		<br><br>

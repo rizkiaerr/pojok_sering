@@ -44,12 +44,13 @@
         </a>
     </header>
 
-	<div class="container">
+	
     <!-- Page Content -->
         <?php
       		include "home.php";
         ?>   
         <!-- /Page Content -->
+    <div class="container">    
         <div class="jumbotron">
             <?php
                 $cmd = "select kategori_jenis from kategori";
